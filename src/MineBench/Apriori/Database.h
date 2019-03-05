@@ -1,7 +1,7 @@
 #ifndef __DATABASE_H
 #define __DATABASE_H
 
-#include <fstream.h>
+#include <fstream>
 #include <stdlib.h>
 #include <sys/types.h>
 #include <unistd.h>

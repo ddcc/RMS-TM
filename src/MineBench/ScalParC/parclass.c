@@ -248,7 +248,7 @@ void ParClassify(int nthreads,atomic_block* first_as_time, atomic_block* second_
 
       GiniInfo  = (GININFO *)calloc(NodesAtThisLevel,sizeof(GININFO));
       if(!GiniInfo) {
-        printf(" Memory Crunch @ GiniInfo (%d)! \n", NodesAtThisLevel*sizeof(GININFO));
+        printf(" Memory Crunch @ GiniInfo (%lu)! \n", NodesAtThisLevel*sizeof(GININFO));
       }
  
       local_GiniInfo = (GININFO **)calloc(NodesAtThisLevel,sizeof(GININFO *));

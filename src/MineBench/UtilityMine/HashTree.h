@@ -20,7 +20,8 @@ public:
    TM_CALLABLE
    ~HashTree();
    
-    void *operator new(size_t);
+   TM_CALLABLE
+   void *operator new(size_t);
 
    TM_CALLABLE
    void operator delete(void *);
@@ -47,7 +48,7 @@ public:
    void decrease_nested_depth(int, int*);
 
    int Count;
-   friend ostream& operator << (ostream&, HashTree&);
+   friend std::ostream& operator << (std::ostream&, HashTree&);
 
    inline int is_leaf()
    {

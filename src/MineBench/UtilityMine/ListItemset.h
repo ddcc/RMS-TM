@@ -73,7 +73,7 @@ public:
    void sortedInsert(Itemset *);// Put item into list
    ListElement * sortedInsert(Itemset *, ListElement *);
    void clearlist();
-   friend ostream& operator << (ostream&, ListItemset&);
+   friend std::ostream& operator << (std::ostream&, ListItemset&);
 
 //    inline ListElement *first()
 //    {

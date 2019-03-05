@@ -1,7 +1,7 @@
 #ifndef __ITEMSET_H
 #define __ITEMSET_H
 #include <malloc.h>
-#include <iostream.h>
+#include <iostream>
 
 #include "pardhp.h"
 
@@ -36,7 +36,7 @@ public:
    int compare(Itemset&);
    int compare(Itemset&, int);
 
-   friend ostream& operator << (ostream&, Itemset&);
+   friend std::ostream& operator << (std::ostream&, Itemset&);
 
    TM_CALLABLE
    int item(int);

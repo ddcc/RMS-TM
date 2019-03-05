@@ -1,7 +1,7 @@
 #CC = icc -openmp -g
-CC = icc -openmp -Qtm_enabled -g
+CC = g++ -fopenmp -fgnu-tm -g
 # CFLAGS = -O2 $(INCLUDE_DIR) 
-CFLAGS  = -fbuiltin -O0 -I /usr/include/c++
+CFLAGS  = -fbuiltin -O2 -I /usr/include/c++
 LINKFLAGS = 
 
 INCLUDE_DIR = -I. 

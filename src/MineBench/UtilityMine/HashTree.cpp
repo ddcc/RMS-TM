@@ -69,7 +69,7 @@ void HashTree::decrease_nested_depth(int pid, int * nestedLock_depth)
 	nestedLock_depth[pid]--;
 }
 
-ostream& operator << (ostream& outputStream, HashTree& hashtree){
+std::ostream& operator << (std::ostream& outputStream, HashTree& hashtree){
       if (hashtree.Depth == 0)
          outputStream << " ROOT : C:" << hashtree.Count
                       << " H:" << hashtree.Hash_function << "\n";
@@ -77,7 +77,7 @@ ostream& operator << (ostream& outputStream, HashTree& hashtree){
          if (hashtree.List_of_itemsets != NULL){
             outputStream << " T:" << hashtree.Threshold
                          << " D:" << hashtree.Depth << "\n";
-            outputStream << *(hashtree.List_of_itemsets) << flush;
+            outputStream << *(hashtree.List_of_itemsets) << std::flush;
          }
       }
       else{
@@ -89,7 +89,7 @@ ostream& operator << (ostream& outputStream, HashTree& hashtree){
                outputStream << "child = " << i
                             << ", Count = " << hashtree.Count << "\n";
 #endif
-               outputStream << *hashtree.Hash_table[i] << flush;
+               outputStream << *hashtree.Hash_table[i] << std::flush;
             }
          }
       }

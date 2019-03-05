@@ -59,7 +59,6 @@ typedef struct ALL_ATOMIC_TIME
 #endif
 
 /*BSC*/
-extern TM_PURE uint64_t rdtsc();
 extern TM_CALLABLE void rearrange_atomic_total_time(int, all_atomic_time *, uint64_t, uint64_t, uint64_t, uint64_t);
 extern TM_CALLABLE void atomic_totalhousekeeping_time(int, all_atomic_time *, uint64_t, uint64_t, uint64_t, uint64_t);
 extern TM_CALLABLE void atomic_totalexecuting_time(int, all_atomic_time *, uint64_t, uint64_t);
@@ -73,3 +72,4 @@ extern uint64_t * thr_io_times;
    }
 #endif
 
+extern TM_PURE uint64_t rdtsc();

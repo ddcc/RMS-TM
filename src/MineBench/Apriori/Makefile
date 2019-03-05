@@ -1,5 +1,5 @@
-CC  = icc -openmp -Qtm_enabled -g
-CFLAGS  = -fbuiltin -O0 -I /usr/include/c++
+CC  = g++ -fopenmp -fgnu-tm -g
+CFLAGS  = -fbuiltin -O2 -I /usr/include/c++
 OBJS	= ListItemset.o
 OBJS2   = rdtsc.o Database.o Itemset.o HashTree.o
 OPTS	= -DBALT 

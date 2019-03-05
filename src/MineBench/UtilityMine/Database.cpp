@@ -1,5 +1,5 @@
-#include <fstream.h>
-#include <iostream.h>
+#include <fstream>
+#include <iostream>
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
@@ -181,6 +181,12 @@ int Database_readfrom(char *infile, itemset2 * &t_utilitycnt, int pid, int file_
                if (item_t_utility[buf[k]] >= MIN_UTILITY) 
                {
 
+                   if (m==t_utilitycnt[buf[j]].count && t_utilitycnt[buf[j]].count > t_utilitycnt[buf[j]].size)
+                   {
+			t_utilitycnt[buf[j]].size += maxsize;
+			t_utilitycnt[buf[j]].t2 = (item_2 *)realloc(t_utilitycnt[buf[j]].t2, t_utilitycnt[buf[j]].size*sizeof(item_2));
+                   }
+
 		ab_enter_time_outside = rdtsc();
         		TRANSACTION_BEGIN
                 ab_enter_time_inside = rdtsc();
@@ -196,13 +202,6 @@ int Database_readfrom(char *infile, itemset2 * &t_utilitycnt, int pid, int file_
 			{
 				
 				t_utilitycnt[buf[j]].count++;
-				
-				if (t_utilitycnt[buf[j]].count > t_utilitycnt[buf[j]].size) 
-				{
-					
-					t_utilitycnt[buf[j]].size += maxsize;
-					t_utilitycnt[buf[j]].t2 = (item_2 *)realloc(t_utilitycnt[buf[j]].t2, t_utilitycnt[buf[j]].size*sizeof(item_2));
-				}
 				
 				t_utilitycnt[buf[j]].t2[m].item2 = buf[k];
 				

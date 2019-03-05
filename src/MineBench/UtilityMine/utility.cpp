@@ -38,8 +38,8 @@
 // Compiler options:-
 // -DBALT     = make trees balanced
 
-#include <iostream.h>
-#include <fstream.h>
+#include <iostream>
+#include <fstream>
 #include <stdio.h>
 #include <stdlib.h>
 #include <stddef.h>
@@ -649,7 +649,7 @@ int main(int argc, char **argv)
 
     /*BSC*/
     if (argc < 6){
-        cout << "usage: <transaction_file> <offset_file> <profit_file> <utility_threshold> <number_of_threads>\n";
+        std::cout << "usage: <transaction_file> <offset_file> <profit_file> <utility_threshold> <number_of_threads>\n";
         exit(3);
     }
      
@@ -803,25 +803,25 @@ int main(int argc, char **argv)
 	printf("Final tot_cand=%d, total_real_high=%d, num_db_scan=%d\n", tot_cand, total_real_high, num_db_scan);
 	for (int i=0; i<nthreads; i++)
   	{
-		printf("THREAD_ID=%d_FIRST_PARALLEL_SECTION_TOTAL_HOUSEKEEPING_TIME= %llu\n", i, ab_time_for_first_parsec[i].total_housekeeping_time);
-		printf("THREAD_ID=%d_FIRST_PARALLEL_SECTION_TOTAL_EXECUTING_TIME= %llu\n", i, ab_time_for_first_parsec[i].total_executing_time);
-		printf("\t\tTHREAD_ID=%d_FIRST_PARALLEL_SECTION_TOTAL_ATOMIC_BLOCK_TIME= %llu\n\n\n", i, ab_time_for_first_parsec[i].total_atomic_time);
+		printf("THREAD_ID=%d_FIRST_PARALLEL_SECTION_TOTAL_HOUSEKEEPING_TIME= %lu\n", i, ab_time_for_first_parsec[i].total_housekeeping_time);
+		printf("THREAD_ID=%d_FIRST_PARALLEL_SECTION_TOTAL_EXECUTING_TIME= %lu\n", i, ab_time_for_first_parsec[i].total_executing_time);
+		printf("\t\tTHREAD_ID=%d_FIRST_PARALLEL_SECTION_TOTAL_ATOMIC_BLOCK_TIME= %lu\n\n\n", i, ab_time_for_first_parsec[i].total_atomic_time);
 
                 firstparsec_atomic_block_time = max(firstparsec_atomic_block_time,ab_time_for_first_parsec[i].total_atomic_time);
 
-  		printf("THREAD_ID=%d_SECOND_PARALLEL_SECTION_TOTAL_HOUSEKEEPING_TIME= %llu\n", i, ab_time_for_second_parsec[i].total_housekeeping_time);
-		printf("THREAD_ID=%d_SECOND_PARALLEL_SECTION_TOTAL_EXECUTING_TIME= %llu\n", i, ab_time_for_second_parsec[i].total_executing_time);
-		printf("\t\tTHREAD_ID=%d_SECOND_PARALLEL_SECTION_TOTAL_ATOMIC_BLOCK_TIME= %llu\n\n\n", i, ab_time_for_second_parsec[i].total_atomic_time);
+  		printf("THREAD_ID=%d_SECOND_PARALLEL_SECTION_TOTAL_HOUSEKEEPING_TIME= %lu\n", i, ab_time_for_second_parsec[i].total_housekeeping_time);
+		printf("THREAD_ID=%d_SECOND_PARALLEL_SECTION_TOTAL_EXECUTING_TIME= %lu\n", i, ab_time_for_second_parsec[i].total_executing_time);
+		printf("\t\tTHREAD_ID=%d_SECOND_PARALLEL_SECTION_TOTAL_ATOMIC_BLOCK_TIME= %lu\n\n\n", i, ab_time_for_second_parsec[i].total_atomic_time);
 
 		secondparsec_atomic_block_time = max(secondparsec_atomic_block_time,ab_time_for_second_parsec[i].total_atomic_time);
 
-		printf("THREAD_ID=%d_TOTAL_HOUSEKEEPING_TIME= %llu\n", i, atomic_secs_time[i].total_housekeeping_time);
-		printf("THREAD_ID=%d_TOTAL_EXECUTING_TIME= %llu\n", i, atomic_secs_time[i].total_executing_time);
-     		printf("THREAD_ID=%d_TOTAL_ATOMIC_BLOCK_TIME= %llu\n", i, atomic_secs_time[i].total_atomic_time);
+		printf("THREAD_ID=%d_TOTAL_HOUSEKEEPING_TIME= %lu\n", i, atomic_secs_time[i].total_housekeeping_time);
+		printf("THREAD_ID=%d_TOTAL_EXECUTING_TIME= %lu\n", i, atomic_secs_time[i].total_executing_time);
+     		printf("THREAD_ID=%d_TOTAL_ATOMIC_BLOCK_TIME= %lu\n", i, atomic_secs_time[i].total_atomic_time);
 
                 max_atomic_block_time = max(max_atomic_block_time, atomic_secs_time[i].total_atomic_time);
 
-                printf("THREAD_ID=%d_IO_TIME= %llu\n\n", i, thr_io_times[i]);
+                printf("THREAD_ID=%d_IO_TIME= %lu\n\n", i, thr_io_times[i]);
                 max_io_time = max(max_io_time, thr_io_times[i]);
    }
 
@@ -838,19 +838,19 @@ int main(int argc, char **argv)
    }
 
    printf("\nMAX_NESTED_DEPTH= %d\n",max_depth);
-   printf("FIRST_PARALLEL_SECTION(rdtsc)= %llu\n", first_parsec_time);
-   printf("FIRST_MAX_ATOMIC_BLOCK_TIME= %llu\n",firstparsec_atomic_block_time);
+   printf("FIRST_PARALLEL_SECTION(rdtsc)= %lu\n", first_parsec_time);
+   printf("FIRST_MAX_ATOMIC_BLOCK_TIME= %lu\n",firstparsec_atomic_block_time);
    printf("FIRST_ATOMIC_BLOCK_RATE= %f\n",(double(firstparsec_atomic_block_time*100)/double(first_parsec_time)));
 
-   printf("SECOND_PARALLEL_SECTION(rdtsc)= %llu\n", second_parsec_time);
-   printf("SECOND_MAX_ATOMIC_BLOCK_TIME= %llu\n",secondparsec_atomic_block_time);
+   printf("SECOND_PARALLEL_SECTION(rdtsc)= %lu\n", second_parsec_time);
+   printf("SECOND_MAX_ATOMIC_BLOCK_TIME= %lu\n",secondparsec_atomic_block_time);
    printf("SECOND_ATOMIC_BLOCK_RATE= %f\n",(double(secondparsec_atomic_block_time*100)/double(second_parsec_time)));
 
 
-   printf("TOTAL_MAX_ATOMIC_BLOCK_TIME= %llu\n",firstparsec_atomic_block_time+secondparsec_atomic_block_time);
-   printf("TOTAL_PARALLEL_SECTION(rdtsc)= %llu\n", first_parsec_time+second_parsec_time);
-   printf("TOTAL_EXECUTION_TIME(rdtsc)_WITH_IO_TIME=%llu\n",end_exc_time-start_exc_time);
-   printf("TOTAL_EXECUTION_TIME(rdtsc)_WITHOUT_IO_TIME=%llu\n",end_exc_time-start_exc_time-max_io_time);
+   printf("TOTAL_MAX_ATOMIC_BLOCK_TIME= %lu\n",firstparsec_atomic_block_time+secondparsec_atomic_block_time);
+   printf("TOTAL_PARALLEL_SECTION(rdtsc)= %lu\n", first_parsec_time+second_parsec_time);
+   printf("TOTAL_EXECUTION_TIME(rdtsc)_WITH_IO_TIME=%lu\n",end_exc_time-start_exc_time);
+   printf("TOTAL_EXECUTION_TIME(rdtsc)_WITHOUT_IO_TIME=%lu\n",end_exc_time-start_exc_time-max_io_time);
    printf("RATE(CRITICAL_TIME/PARALLEL_SECTION)= %f\n",(double((firstparsec_atomic_block_time+secondparsec_atomic_block_time)*100)/double(first_parsec_time+second_parsec_time)));
     printf("RATE(CRITICAL_TIME/TOTAL_EXECUTION_TIME_WITH_IO_TIME)= %f\n",(double((firstparsec_atomic_block_time+secondparsec_atomic_block_time)*100)/double(end_exc_time-start_exc_time)));	
     printf("RATE(CRITICAL_TIME/TOTAL_EXECUTION_TIME_WITHOUT_IO_TIME)= %f\n",(double((firstparsec_atomic_block_time+secondparsec_atomic_block_time)*100)/double(end_exc_time-start_exc_time-max_io_time)));

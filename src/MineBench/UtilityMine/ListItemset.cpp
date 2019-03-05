@@ -209,7 +209,7 @@ void  ListItemset::clearlist()
    First = Last = NULL;
 }
 
-ostream& operator << (ostream& outputStream, ListItemset& list){
+std::ostream& operator << (std::ostream& outputStream, ListItemset& list){
    int cnt = 0;
    outputStream << "LIST:\n";
    if (!(list.First == NULL)){

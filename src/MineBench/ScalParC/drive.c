@@ -155,40 +155,40 @@ int main(int argc, char *argv[])
      printf("*****************************\n");
      printf("THREAD_ID= %d\tFIRST_CS_transaction_NUMBER= %d\n", i,first_as_time[i].transaction);
      printf("THREAD_ID= %d\tFIRST_CS_COMMIT_NUMBER= %d\n", i,first_as_time[i].commit);
-     printf("THREAD_ID= %d\tFIRST_CS_MAX_WAIT= %llu\n",i, first_as_time[i].max_housekeeping_time);
-     printf("THREAD_ID= %d\tFIRST_CS_MIN_WAIT= %llu\n",i,first_as_time[i].min_housekeeping_time);
-     printf("THREAD_ID= %d\tFIRST_CS_MAX_COMMIT= %llu\n",i,first_as_time[i].max_executing_time);
-     printf("THREAD_ID= %d\tFIRST_CS_MIN_COMMIT= %llu\n",i,first_as_time[i].min_executing_time);
-     printf("THREAD_ID= %d\tFIRST_CS_TOTALTIME= %llu\n\n",i,first_as_time[i].total_atomic_time);
+     printf("THREAD_ID= %d\tFIRST_CS_MAX_WAIT= %lu\n",i, first_as_time[i].max_housekeeping_time);
+     printf("THREAD_ID= %d\tFIRST_CS_MIN_WAIT= %lu\n",i,first_as_time[i].min_housekeeping_time);
+     printf("THREAD_ID= %d\tFIRST_CS_MAX_COMMIT= %lu\n",i,first_as_time[i].max_executing_time);
+     printf("THREAD_ID= %d\tFIRST_CS_MIN_COMMIT= %lu\n",i,first_as_time[i].min_executing_time);
+     printf("THREAD_ID= %d\tFIRST_CS_TOTALTIME= %lu\n\n",i,first_as_time[i].total_atomic_time);
      
  
      printf("THREAD_ID= %d\tSECOND_CS_transaction_NUMBER= %d\n", i,second_as_time[i].transaction);
      printf("THREAD_ID= %d\tSECOND_CS_COMMIT_NUMBER= %d\n", i,second_as_time[i].commit);
-     printf("THREAD_ID= %d\tSECOND_CS_MAX_WAIT= %llu\n",i, second_as_time[i].max_housekeeping_time);
-     printf("THREAD_ID= %d\tSECOND_CS_MIN_WAIT= %llu\n",i,second_as_time[i].min_housekeeping_time);
-     printf("THREAD_ID= %d\tSECOND_CS_MAX_COMMIT= %llu\n",i,second_as_time[i].max_executing_time);
-     printf("THREAD_ID= %d\tSECOND_CS_MIN_COMMIT= %llu\n",i,second_as_time[i].min_executing_time);
-     printf("THREAD_ID= %d\tSECOND_CS_TOTALTIME= %llu\n\n",i,second_as_time[i].total_atomic_time);
+     printf("THREAD_ID= %d\tSECOND_CS_MAX_WAIT= %lu\n",i, second_as_time[i].max_housekeeping_time);
+     printf("THREAD_ID= %d\tSECOND_CS_MIN_WAIT= %lu\n",i,second_as_time[i].min_housekeeping_time);
+     printf("THREAD_ID= %d\tSECOND_CS_MAX_COMMIT= %lu\n",i,second_as_time[i].max_executing_time);
+     printf("THREAD_ID= %d\tSECOND_CS_MIN_COMMIT= %lu\n",i,second_as_time[i].min_executing_time);
+     printf("THREAD_ID= %d\tSECOND_CS_TOTALTIME= %lu\n\n",i,second_as_time[i].total_atomic_time);
      
 
      printf("THREAD_ID= %d\tTHIRD_CS_transaction_NUMBER= %d\n", i,third_as_time[i].transaction);
      printf("THREAD_ID= %d\tTHIRD_CS_COMMIT_NUMBER= %d\n", i,third_as_time[i].commit);
-     printf("THREAD_ID= %d\tTHIRD_CS_MAX_WAIT= %llu\n",i, third_as_time[i].max_housekeeping_time);
-     printf("THREAD_ID= %d\tTHIRD_CS_MIN_WAIT= %llu\n",i,third_as_time[i].min_housekeeping_time);
-     printf("THREAD_ID= %d\tTHIRD_CS_MAX_COMMIT= %llu\n",i,third_as_time[i].max_executing_time);
-     printf("THREAD_ID= %d\tTHIRD_CS_MIN_COMMIT= %llu\n",i,third_as_time[i].min_executing_time);
-     printf("THREAD_ID= %d\tTHIRD_CS_TOTALTIME= %llu\n\n",i,third_as_time[i].total_atomic_time);
+     printf("THREAD_ID= %d\tTHIRD_CS_MAX_WAIT= %lu\n",i, third_as_time[i].max_housekeeping_time);
+     printf("THREAD_ID= %d\tTHIRD_CS_MIN_WAIT= %lu\n",i,third_as_time[i].min_housekeeping_time);
+     printf("THREAD_ID= %d\tTHIRD_CS_MAX_COMMIT= %lu\n",i,third_as_time[i].max_executing_time);
+     printf("THREAD_ID= %d\tTHIRD_CS_MIN_COMMIT= %lu\n",i,third_as_time[i].min_executing_time);
+     printf("THREAD_ID= %d\tTHIRD_CS_TOTALTIME= %lu\n\n",i,third_as_time[i].total_atomic_time);
      
 
      printf("THREAD_ID= %d\tFOURTH_CS_transaction_NUMBER= %d\n", i,fourth_as_time[i].transaction);
      printf("THREAD_ID= %d\tFOURTH_CS_COMMIT_NUMBER= %d\n", i,fourth_as_time[i].commit);
-     printf("THREAD_ID= %d\tFOURTH_CS_MAX_WAIT= %llu\n",i, fourth_as_time[i].max_housekeeping_time);
-     printf("THREAD_ID= %d\tFOURTH_CS_MIN_WAIT= %llu\n",i,fourth_as_time[i].min_housekeeping_time);
-     printf("THREAD_ID= %d\tFOURTH_CS_MAX_COMMIT= %llu\n",i,fourth_as_time[i].max_executing_time);
-     printf("THREAD_ID= %d\tFOURTH_CS_MIN_COMMIT= %llu\n",i,fourth_as_time[i].min_executing_time);
-     printf("THREAD_ID= %d\tFOURTH_CS_TOTALTIME= %llu\n\n",i,fourth_as_time[i].total_atomic_time);
+     printf("THREAD_ID= %d\tFOURTH_CS_MAX_WAIT= %lu\n",i, fourth_as_time[i].max_housekeeping_time);
+     printf("THREAD_ID= %d\tFOURTH_CS_MIN_WAIT= %lu\n",i,fourth_as_time[i].min_housekeeping_time);
+     printf("THREAD_ID= %d\tFOURTH_CS_MAX_COMMIT= %lu\n",i,fourth_as_time[i].max_executing_time);
+     printf("THREAD_ID= %d\tFOURTH_CS_MIN_COMMIT= %lu\n",i,fourth_as_time[i].min_executing_time);
+     printf("THREAD_ID= %d\tFOURTH_CS_TOTALTIME= %lu\n\n",i,fourth_as_time[i].total_atomic_time);
 
-     printf("THREAD_ID= %d\tTOTAL_TIME_FOR_ALL_SECTIONS= %llu\n",i,first_as_time[i].total_atomic_time+second_as_time[i].total_atomic_time+third_as_time[i].total_atomic_time+fourth_as_time[i].total_atomic_time); 
+     printf("THREAD_ID= %d\tTOTAL_TIME_FOR_ALL_SECTIONS= %lu\n",i,first_as_time[i].total_atomic_time+second_as_time[i].total_atomic_time+third_as_time[i].total_atomic_time+fourth_as_time[i].total_atomic_time); 
      printf("*****************************\n\n");
    }
 
@@ -196,19 +196,19 @@ int main(int argc, char *argv[])
 
    for (int i=0; i<nthreads; i++)
    {
-     printf("THREAD_ID= %d\tTOTAL_WAITING_TIME_FOR_ACQURING_LOCK= %llu\n", i, atomic_blocks_time[i].total_waiting_time);
-     printf("THREAD_ID= %d\tTOTAL_EXECUTING_TIME= %llu\n", i, atomic_blocks_time[i].total_executing_time);
-     printf("\t\tTHREAD_ID= %d\tTOTAL_TIME_WITH_WAITING_TIME= %llu\n", i, atomic_blocks_time[i].total_as_time);
+     printf("THREAD_ID= %d\tTOTAL_WAITING_TIME_FOR_ACQURING_LOCK= %lu\n", i, atomic_blocks_time[i].total_waiting_time);
+     printf("THREAD_ID= %d\tTOTAL_EXECUTING_TIME= %lu\n", i, atomic_blocks_time[i].total_executing_time);
+     printf("\t\tTHREAD_ID= %d\tTOTAL_TIME_WITH_WAITING_TIME= %lu\n", i, atomic_blocks_time[i].total_as_time);
      
      if ( atomic_blocks_time[i].total_as_time > max_atomic_block_time)
        max_atomic_block_time =  atomic_blocks_time[i].total_as_time;
    }
 
-  printf("MAX_ATOMIC_BLOCK_TIME= %llu\n",max_atomic_block_time);
-  printf("PARALLEL_SECTION_TIME_IN_RDTSC= %llu\n",parallel_sec_time); 
-  printf("I/O_TIME_IN_RDTSC= %llu\n", max_uint);
-  printf("COMPUTATION_TIME_IN_RDTSC= %llu\n", te_uint-ts_uint-max_uint);
-  printf("TOTAL_EXC_TIME_IN_RDTSC= %llu\n",te_uint-ts_uint); 
+  printf("MAX_ATOMIC_BLOCK_TIME= %lu\n",max_atomic_block_time);
+  printf("PARALLEL_SECTION_TIME_IN_RDTSC= %lu\n",parallel_sec_time); 
+  printf("I/O_TIME_IN_RDTSC= %lu\n", max_uint);
+  printf("COMPUTATION_TIME_IN_RDTSC= %lu\n", te_uint-ts_uint-max_uint);
+  printf("TOTAL_EXC_TIME_IN_RDTSC= %lu\n",te_uint-ts_uint); 
   //Critical section rate = (MAX_CRITICAL_SECTION_TIME / COMPUTATION_TIME_IN_RDTSC) *100
 
   free(io_time_uint);

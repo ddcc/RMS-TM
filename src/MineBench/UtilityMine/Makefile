@@ -1,5 +1,5 @@
-CC  = icc -openmp -Qtm_enabled -g
-CFLAGS  = -fbuiltin -O0 -I /usr/include/c++
+CC  = g++ -fopenmp -fgnu-tm -g
+CFLAGS  = -fbuiltin -O2 -I /usr/include/c++
 OBJS	= ListItemset.o
 OBJS2   = rdtsc.o TimeCalculation.o Database.o Itemset.o HashTree.o
 OPTS	= -DBALT -DOPTIMAL 
@@ -12,13 +12,13 @@ default:	$(TARGET)
 clean:
 	rm -rf *~ *.o $(TARGET)
 
-utility_mine: utility.cpp $(OBJS) $(OBJS2) 
+utility_mine: $(OBJS2) $(OBJS) utility.cpp
 	$(CC) $(CFLAGS) $(OPTS)\
-	-o utility_mine utility.cpp $(OBJS) $(OBJS2) $(LIBS)
+	-o utility_mine $(OBJS2) $(OBJS) utility.cpp $(LIBS)
 
-# rdtsc.o: rdtsc.cpp
-# 	$(CC) $(CFLAGS) $(OPTS) -c rdtsc.cpp
-# 
+rdtsc.o: rdtsc.c
+	$(CC) $(CFLAGS) $(OPTS) -c rdtsc.c
+
 # TimeCalculation.o: TimeCalculation.cpp
 # 	$(CC) $(CFLAGS) $(OPTS) -c TimeCalculation.cpp
 

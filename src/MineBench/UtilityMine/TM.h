@@ -2,10 +2,10 @@
  #define _TM_H
     #if defined(TM)
     /*it is compiled with TM*/
-	#define TRANSACTION_BEGIN __tm_atomic {
+	#define TRANSACTION_BEGIN __transaction_atomic {
 	#define TRANSACTION_END }
-	#define TM_CALLABLE __attribute__((tm_callable))
-        #define TM_PURE __attribute__((tm_pure))
+	#define TM_CALLABLE __attribute__((transaction_safe))
+        #define TM_PURE __attribute__((transaction_pure))
     #else
    	#define TRANSACTION_BEGIN
 	#define TRANSACTION_END

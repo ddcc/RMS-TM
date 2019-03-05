@@ -161,7 +161,7 @@ void Itemset::clear()
 }
 
 
-ostream& operator << (ostream& outputStream, Itemset& arr){
+std::ostream& operator << (std::ostream& outputStream, Itemset& arr){
    outputStream << "ITEM: ";
    for (int i=0; i < arr.theNumel; i++)
       outputStream << i << ":" << arr.theItemset[i] << " ";
