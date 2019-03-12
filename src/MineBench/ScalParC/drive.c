@@ -211,6 +211,11 @@ int main(int argc, char *argv[])
   printf("TOTAL_EXC_TIME_IN_RDTSC= %lu\n",te_uint-ts_uint); 
   //Critical section rate = (MAX_CRITICAL_SECTION_TIME / COMPUTATION_TIME_IN_RDTSC) *100
 
+#pragma omp parallel
+{
+  TM_THREAD_EXIT();
+}
+
   free(io_time_uint);
   free(first_as_time);
   free(second_as_time);

@@ -712,6 +712,11 @@ void init_var()
 void clean_up(){
    int i;
 
+#pragma omp parallel
+{
+   TM_THREAD_EXIT();
+}
+
    delete Candidate;
    if (Largelist) delete Largelist;
    delete [] hash_indx;
