@@ -6,7 +6,7 @@ LINKFLAGS =
 
 INCLUDE_DIR = -I. 
 
-LIBS = -lm
+LIBS = -lm -ldl
 TARGET = scalparc
 OBJ  = rdtsc.o drive.o getdata.o parsort.o parclass.o
 

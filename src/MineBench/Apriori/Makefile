@@ -3,7 +3,7 @@ CFLAGS  = -fbuiltin -O2 -I /usr/include/c++
 OBJS	= ListItemset.o
 OBJS2   = rdtsc.o Database.o Itemset.o HashTree.o
 OPTS	= -DBALT 
-LIBS =  -lm
+LIBS =  -lm -ldl
 LD = ld
 
 TARGET  = no_output_apriori

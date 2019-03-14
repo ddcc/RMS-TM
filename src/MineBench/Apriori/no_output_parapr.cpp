@@ -715,6 +715,7 @@ void clean_up(){
 #pragma omp parallel
 {
    TM_THREAD_EXIT();
+#pragma omp barrier
 }
 
    delete Candidate;

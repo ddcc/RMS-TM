@@ -3,7 +3,7 @@ CFLAGS  = -fbuiltin -O2 -I /usr/include/c++
 OBJS	= ListItemset.o
 OBJS2   = rdtsc.o TimeCalculation.o Database.o Itemset.o HashTree.o
 OPTS	= -DBALT -DOPTIMAL 
-LIBS = -lm 
+LIBS = -lm -ldl
 
 TARGET  = utility_mine 
 
